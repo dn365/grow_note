@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title><%= @title || "GrowNote" %></title>
+  <!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css"> -->
+  <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+
+  <!--[if lt IE 9]>
+  <script src="/assets/html5shiv.js"></script>
+  <script src="/assets/respond.min.js"></script>
+  <![endif]-->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body style="background-color: #f1f2f6;">
+
+  <!-- head -->
+  <%= render partial: "/layouts/head" %>
+
+  <!--documents-->
+  <div class="container documents">
+    <%= yield %>
+  </div>
+
+  <!-- footer -->
+  <%= render partial: "/layouts/footer" %>
+
+
+
+</body>
+</html>
