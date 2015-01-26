@@ -1,0 +1,34 @@
+<div class="col-md-9">
+  <%= form_tag "/pictrues_delete_all", method: :delete do -%>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="pull-right">
+        <div class="btn-group">
+          <%= button_tag "Delete", class:"btn btn-default" %>
+        </div>
+      </div>
+      <h4 class="note-title">Listing Pictrues</h4>
+    </div>
+    <div id="pictrue-show">
+
+      <ul class="list-inline">
+        <% @pictrues.each do |pictrue| %>
+          <li>
+            <a href="#">
+              <%= image_tag pictrue.pic.thumb.url, size: "193x200", class: "img-thumbnail" %>
+              <div class="text text-center">
+                <!-- <div class="inner"><i class="glyphicon glyphicon-ok"></i></div> -->
+                <%= check_box_tag "pic[]", pictrue.id %>
+              </div>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+  <% end -%>
+</div>
+
+<%= render partial: 'menu_list' %>
+<%= render partial: 'modal_upload_form' %>

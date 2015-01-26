@@ -21,5 +21,6 @@ module GrowNote
     # config.i18n.default_locale = :de
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
     config.assets.paths << "#{Rails}/vendor/assets/angularicons"
+    config.assets.paths << "#{Rails}/vendor/assets/bootflat"
   end
 end

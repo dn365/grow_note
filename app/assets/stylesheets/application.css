@@ -16,4 +16,5 @@
  *= require bootstrap-wysihtml5
  *= require jquery.fileupload-ui
  *= require jquery.fileupload
+ *= require dropzone
  */

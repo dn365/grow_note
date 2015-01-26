@@ -14,8 +14,8 @@
       <tbody>
         <% @posts.each do |post| %>
           <tr>
-            <td><%= link_to truncate(post.title, length: 15), post %></td>
-            <td><%= truncate(strip_tags(post.body).gsub("&nbsp;",""), length:35) %></td>
+            <td><%= link_to truncate(post.title, length: 20), post %></td>
+            <td><%= truncate(strip_tags(post.body).gsub(/&nbsp;|&#13;/,""), length:55) %></td>
             <td><%= link_to 'Edit', edit_post_path(post) %></td>
           </tr>
         <% end %>

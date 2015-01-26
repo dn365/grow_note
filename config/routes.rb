@@ -1,11 +1,21 @@
 Rails.application.routes.draw do
+
   resources :posts
+  get "img_upload" =>  'pictrues#img_upload'
+  get "pictrues/upload" => 'pictrues#upload'
+  get "pictrues" => "pictrues#index"
+  post "img_upload" => 'pictrues#create'
+  delete "pictrue_delete" => "pictrues#destroy"
+  delete "pictrues_delete_all" => 'pictrues#destroy_all'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+
+  root "posts#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

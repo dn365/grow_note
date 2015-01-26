@@ -6045,7 +6045,7 @@ blockquote {
 	margin:0;
 	vertical-align:middle;
 	cursor:pointer;
-	background:url(../bootflat/img/check_flat/default.png) no-repeat;
+	background:url(/assets/img/check_flat/default.png) no-repeat;
 	border:none;
 	*display:inline
 }

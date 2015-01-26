@@ -26,24 +26,18 @@
   <div class="form-group">
     <span class="btn btn-success fileinput-button">
       <i class="glyphicon glyphicon-plus"></i>
-      <span>Add Images...</span>
-      <%= f.fields_for :pictures do |pic| %>
-        <%= pic.file_field :pic, multiple:true, name: "pictures[pic][]", class:"post_pictures_attributes_pic" %>
-      <% end %>
+      <span id="add-pictrues-button">Add Images...</span>
+      <!-- <button type="button" class="btn btn-block" id="add-pictrues-button">Add Pictrues</button> -->
     </span>
-    <ul class="list-inline" id="uploadPreview">
-      <% if @post.pictures.all %>
-        <% @post.pictures.all.each do |p| %>
-        <li class='list-group-item'><%= image_tag p.pic_url(:thumb), class:"img-rounded" %></li>
-        <% end %>
-      <% end %>
-    </ul>
+
   </div>
 
   <div class="actions">
-    <%= f.submit "Save", class:"btn btn-primary btn-block" %>
+    <%= f.submit "Save", class: "btn btn-primary btn-block" %>
   </div>
+
 <% end %>
+<div class="modal" id="img-upload-form"></div>
 
 <script type="text/javascript">
   $(document).ready(function(){

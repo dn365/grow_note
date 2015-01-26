@@ -17,4 +17,6 @@
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales/zh-CN
 //= require turbolinks
+//= require dropzone.min
+//= require icheck.min
 //= require_tree .

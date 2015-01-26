@@ -28,11 +28,6 @@
       <p>
         <%= @post.body.html_safe %>
       </p>
-      <p>
-        <% @picture.each do |pic| %>
-          <%= image_tag pic.pic_url(:thumb_large), class: "img-rounded", size: "200x120", style: "margin-top: 3.5px;" %>
-        <% end %>
-      </p>
     </div>
   </div>
 

@@ -1,0 +1,33 @@
+<div class="modal" id="pictrue-upload-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Upload Images</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag "/img_upload", class: "dropzone", id: "dropzone" do -%>
+        <div class="fallback">
+          <%= file_field_tag "pic", multiple:true, class:"post_pictures_attributes_pic" %>
+        </div>
+        <% end -%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pictrue-upload-close" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script charset="utf-8">
+  var myDropzone;
+  Dropzone.autoDiscover = false;
+  try {
+    myDropzone = new Dropzone("#dropzone", {
+      paramName: "pic",
+      maxFilesize: 0.5,
+      addRemoveLinks: false
+    });
+  } catch (_error) {
+    alert("Upload does not support older browsers!");
+  }
+</script>
