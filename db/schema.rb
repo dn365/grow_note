@@ -16,23 +16,23 @@ ActiveRecord::Schema.define(version: 20141219062550) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "pictrues", force: true do |t|
-    t.string   "pic"
-    t.string   "title"
+  create_table "pictrues", force: :cascade do |t|
+    t.string   "pic",        limit: 255
+    t.string   "title",      limit: 255
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "post_pic_items", force: true do |t|
+  create_table "post_pic_items", force: :cascade do |t|
     t.integer  "post_id"
     t.integer  "pictrue_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "posts", force: true do |t|
-    t.string   "title"
+  create_table "posts", force: :cascade do |t|
+    t.string   "title",      limit: 255
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
